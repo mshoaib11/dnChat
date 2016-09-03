@@ -1,0 +1,12 @@
+1. Open the Command Prompt
+2. Set the path to bin folder of your Java JDK installation (e.g. "set Path=C:\Program Files\Java\jdk_version\bin")
+3. Set home path as the directory of your Java JDK installation (e.g. "set HomePath= C:\Program Files\Java\jdk_version")
+4. Depending on where you saved the zip file, extract it and set the command promot to the src folder of the extracted zip folder
+   If you have the exracted zip folder on desktop and have named it dnChatServer, on windows machine, your command prompt should look something like this
+   C:\Users\user_name\Desktop\dnChatServer\src >
+5. Type "javac Server.java" and hit enter
+   C:\Users\user_name\Desktop\dnChatServer\src > javac Server.java
+6. Type "java Server" and hit enter
+   C:\Users\user_name\Desktop\dnChatServer\src > java Server
+	
+   
