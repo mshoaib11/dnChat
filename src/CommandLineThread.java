@@ -53,7 +53,6 @@ public class CommandLineThread implements Runnable {
 							}
 						catch (java.io.IOException e) {
 						         System.out.println("Can't connect.");
-						         //System.out.println(e);
 						    }
 						}
 						else{
@@ -61,7 +60,6 @@ public class CommandLineThread implements Runnable {
 							continue;
 						}
 					}
-					
 					else if(args==3){ 
 						String command = input.split(" ")[0].trim();
 						String IP_or_HOST = input.split(" ")[1].trim();
@@ -88,7 +86,6 @@ public class CommandLineThread implements Runnable {
 						}
 						catch (java.io.IOException e) {
 						         System.out.println("Can't connect.");
-						         //System.out.println(e);
 						      }
 						}
 					}
@@ -101,10 +98,11 @@ public class CommandLineThread implements Runnable {
 			}while(!input.equals("exit"));
 				Server.shutdown();
 				System.exit(0);
-		}catch (IOException | InterruptedException e) {
-		
+		}
+		catch (IOException | InterruptedException e) {
+			
+		}
 	}
-}
 
 	private String sendHandShakeRequest(Socket serverConnection, String IP_or_HOST, int PORT) throws IOException, InterruptedException {
 		String request = "GET / HTTP/1.1\r\n"+
@@ -146,13 +144,12 @@ public class CommandLineThread implements Runnable {
 		String domainIdentifier = "((\\p{Alnum})([-]|(\\p{Alnum}))*(\\p{Alnum}))|(\\p{Alnum})";
 		String domainNameRule = "("+ domainIdentifier + ")((\\.)(" + domainIdentifier + "))*";
 		String oneAlpha = "(.)*((\\p{Alpha})|[-])(.)*";
-		
 		if((host == null) || (host.length()>63)) {
 			System.out.println("Host not validated.");
 			return false;
 		}
-			return host.matches(domainNameRule) && host.matches(oneAlpha);
-		}
+		return host.matches(domainNameRule) && host.matches(oneAlpha);
+	}
 	
 	private boolean validatePort(String port) {
 		if(Integer.parseInt(port)>1024 && Integer.parseInt(port)<=65535){
